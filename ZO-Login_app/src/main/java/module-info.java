@@ -10,6 +10,7 @@ module com.example.zo_login {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.jfoenix;
 
     opens com.example.zo_login to javafx.fxml;
     exports com.example.zo_login;
