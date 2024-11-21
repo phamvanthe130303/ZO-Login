@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #242424;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="75.0" layoutY="47.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="5.0" top="5.0" />
+               </BorderPane.margin>
+               <children>
+                  <Pane maxHeight="30.0" maxWidth="50.0" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="545.0" AnchorPane.topAnchor="0.0" />
+                  <Pane prefHeight="30.0" prefWidth="440.0" style="-fx-background-color: #3A3A3A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="0.0" />
+                  <Pane layoutX="494.0" maxHeight="30.0" maxWidth="100.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #3A3A3A;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="495.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" top="5.0" />
+               </BorderPane.margin></AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #3A3A3A;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin></AnchorPane>
+         </center>
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <!-- VBox con đầu tiên -->
+                     <VBox prefHeight="170.0" prefWidth="100.0" style="-fx-background-color: #3A3A3A;" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin></VBox>
+
+                     <!-- VBox con thứ hai -->
+                     <VBox prefHeight="161.0" prefWidth="100.0" style="-fx-background-color: #3A3A3A;" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin></VBox>
+                  </VBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin></AnchorPane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

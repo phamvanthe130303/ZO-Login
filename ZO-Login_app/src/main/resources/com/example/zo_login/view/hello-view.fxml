@@ -2,42 +2,24 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <SplitPane dividerPositions="0.07" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.07" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 0; -fx-background-color: #282828;" styleClass="split-pane" stylesheets="@../style/dashboard_css.css" BorderPane.alignment="CENTER">
          <items>
-            <VBox maxWidth="70.0" minWidth="40.0" prefHeight="398.0" prefWidth="173.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox maxWidth="70.0" minWidth="40.0" prefHeight="398.0" prefWidth="173.0" styleClass="divider" stylesheets="@../style/dashboard_css.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane prefHeight="402.0" prefWidth="296.0">
-                     <children>
-                        <Button id="home" layoutX="-3.0" layoutY="73.0" mnemonicParsing="false" stylesheets="@../style/dashboard_css.css" AnchorPane.bottomAnchor="302.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="0.0">
-                           <graphic>
-                              <ImageView fitHeight="23.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/icons8_Home_32px.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                           <padding>
-                              <Insets left="50.0" />
-                           </padding>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  <Pane prefHeight="69.0" prefWidth="40.0" />
+                  <VBox prefHeight="405.0" prefWidth="40.0" style="-fx-background-color: #05071F; -fx-border-radius: 0 20px 0 0; -fx-background-radius: 0 20px 0 0;" />
                </children>
             </VBox>
-            <VBox prefHeight="398.0" prefWidth="40.0">
+            <VBox prefHeight="398.0" prefWidth="40.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-background-color: #05071F;" styleClass="divider" stylesheets="@../style/dashboard_css.css">
                <children>
-                  <AnchorPane prefHeight="398.0" prefWidth="365.0" />
+                  <AnchorPane prefHeight="400.0" prefWidth="404.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></AnchorPane>
                </children>
             </VBox>
          </items>
