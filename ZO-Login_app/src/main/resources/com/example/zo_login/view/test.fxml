@@ -38,7 +38,7 @@
                      <children>
                         <Button layoutX="146.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnLogout" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/logout.png" />
                                  </image>
@@ -46,7 +46,7 @@
                            </graphic></Button>
                         <Button layoutX="86.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnAccount" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/avata.png" />
                                  </image>
@@ -54,13 +54,13 @@
                            </graphic></Button>
                         <Button layoutX="16.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnNoti" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/notification.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Pane fx:id="id_noti_new" layoutX="39.0" layoutY="7.0" prefHeight="15.0" prefWidth="15.0" style="-fx-background-color: red; -fx-background-radius: 50%; -fx-border-color: #3A3A3A; -fx-border-radius: 50%;" />
+                        <Pane fx:id="idNotiNew" layoutX="39.0" layoutY="7.0" prefHeight="12.0" prefWidth="12.0" style="-fx-background-color: red; -fx-background-radius: 50%; -fx-border-color: #3A3A3A; -fx-border-radius: 50%;" />
                      </children></Pane>
                </children>
             </HBox>
@@ -74,7 +74,7 @@
                <children>
                   <Pane layoutY="14.0" prefHeight="529.0" prefWidth="50.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
                      <children>
-                        <Button layoutY="20.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuProfile" layoutY="20.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -82,15 +82,15 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="75.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuProxy" layoutY="75.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btn" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/proxy.png" />
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuRec" layoutY="144.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -98,7 +98,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="199.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuShedule" layoutY="199.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -106,7 +106,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="255.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuCode" layoutY="255.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -114,7 +114,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="331.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuBlog" layoutY="331.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -122,7 +122,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuConnect" layoutY="386.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
