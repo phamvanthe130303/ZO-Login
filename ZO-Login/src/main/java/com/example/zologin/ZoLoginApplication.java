@@ -9,6 +9,7 @@ public class ZoLoginApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ZoLoginApplication.class, args);
+		System.setProperty("java.awt.headless", "false");
 		CreateWebDriverController controller = new CreateWebDriverController();
 		controller.CreateWebDriverDemo();
 	}

@@ -8,8 +8,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v130.page.Page;
 import org.openqa.selenium.devtools.v130.target.Target;
+import org.openqa.selenium.Point;
 
-
+import java.awt.*;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,9 +33,29 @@ public class CreateWebDriverController {
         options.addArguments("--disable-blink-features=AutomationControlled");
         options.addArguments("window-size=200,300");
 
+        // clearResolutionCache xóa thông tin cache cấu hình WebDriverManager
+        WebDriverManager.chromedriver().clearResolutionCache();
+
+
         WebDriverManager.chromedriver().setup();
 
+
+        // Lấy danh sách màn hình
+        GraphicsDevice[] screens = GraphicsEnvironment
+                .getLocalGraphicsEnvironment()
+                .getScreenDevices();
         ChromeDriver driver = new ChromeDriver(options);
+        if (screens.length < 2) {
+            System.out.println("Chỉ có 1 màn hình. Không thể di chuyển sang màn hình thứ hai.");
+        } else {
+            Rectangle screenBounds = screens[1].getDefaultConfiguration().getBounds();
+
+            // Di chuyển trình duyệt sang màn hình thứ hai
+            driver.manage().window().setPosition(new Point(screenBounds.x,screenBounds.y));
+
+        }
+
+
         // Xóa thuộc tính `navigator.webdriver` để che dấu là webdriver
         ((JavascriptExecutor) driver).executeScript(
                 "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
@@ -74,11 +95,12 @@ public class CreateWebDriverController {
         //Chuyển hướng hoặc tải lại trang
         devTools.send(Page.enable());
         devTools.addListener(Page.frameNavigated(), frame -> {
+            chromeService.getAcctionUser(driver);
             System.out.println("Chuyển hướng hoặc tải lại trang: " + frame.getFrame().getUrl());
         });
 
         driver.get("https://www.google.com/?hl=vi");
 
-        chromeService.getAcctionUser(driver);
+
     }
 }
