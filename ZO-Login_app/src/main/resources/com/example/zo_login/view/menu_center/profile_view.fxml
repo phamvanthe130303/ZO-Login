@@ -3,16 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="1200.0" prefWidth="1200.0" stylesheets="@../../style/profile_css.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="1200.0" prefWidth="1200.0" stylesheets="@../../style/profile_css.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zo_login.controller.ProfileController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="300.0">
          <children>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane fx:id="idTabPane" prefHeight="200.0" prefWidth="200.0" styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="Untitled Tab 1">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView prefHeight="168.0" prefWidth="125.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                <columns>
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                  <TableColumn minWidth="0.0" prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
+                                </columns>
+                              </TableView>
+                           </children></AnchorPane>
                   </content>
                 </Tab>
                 <Tab text="Untitled Tab 2">

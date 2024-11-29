@@ -3,31 +3,34 @@
     -fx-background-color:  #2B2B2B; /* Nền tối */
 }
 
-/*!* Nền và viền cho các tab *!*/
-/*.tab-header-background {*/
-/*    -fx-background-color: #3A3A3A; !* Nền của các tab *!*/
-/*    -fx-border-color: #FF6A00; !* Viền màu cam *!*/
-/*    -fx-border-width: 0 0 2px 0; !* Đường viền dưới của tab *!*/
-/*}*/
+/* Nền và viền cho các tab */
+.tab-header-background {
+    -fx-background-color: #2B2B2B; /* Nền của các tab */
+    -fx-border-width: 0; /* Đường viền dưới của tab */
+}
 
-/*!* Màu chữ của tab khi không được chọn *!*/
-/*.tab {*/
-/*    -fx-text-fill: #D3D3D3; !* Màu chữ sáng cho các tab không được chọn *!*/
-/*    -fx-background-color: transparent; !* Nền trong suốt để thấy được màu nền của TabPane *!*/
-/*}*/
+/* Màu chữ của tab khi không được chọn */
+.tab {
+    -fx-text-fill: white; /* Màu chữ sáng cho các tab không được chọn */
+    -fx-background-color: transparent; /* Nền trong suốt để thấy được màu nền của TabPane */
+}
+/* Màu chữ của tab khi không được chọn */
+.tab-label {
+    -fx-text-fill: white; /* Đặt màu chữ khi không được chọn */
+}
 
-/*!* Màu nền và chữ của tab khi được chọn *!*/
-/*.tab:selected {*/
-/*    -fx-background-color: transparent; !* Nền trong suốt cho tab đã chọn *!*/
-/*    -fx-text-fill: #FFFFFF; !* Màu chữ trắng khi chọn *!*/
-/*    -fx-border-color: #FF6A00; !* Viền cam khi chọn *!*/
-/*    -fx-border-width: 0 0 3px 0; !* Độ dày viền khi tab được chọn *!*/
-/*}*/
+/* Màu nền và chữ của tab khi được chọn */
+.tab:selected .tab-label{
+    -fx-background-color: transparent; /* Nền trong suốt cho tab đã chọn */
+    -fx-text-fill: #FFFFFF; /* Màu chữ trắng khi chọn */
+    -fx-border-color: #FF6A00; /* Viền cam khi chọn */
+    -fx-border-width: 0 0 2px 0; /* Độ dày viền khi tab được chọn */
+}
 
-/*!* Màu nền của tab khi hover *!*/
-/*.tab:hover {*/
-/*    -fx-background-color: #555555; !* Đổi màu nền khi hover *!*/
-/*    -fx-text-fill: #FFFFFF; !* Màu chữ khi hover *!*/
-/*    -fx-border-color: #FF6A00; !* Viền cam khi hover *!*/
-/*    -fx-border-width: 0 0 2px 0; !* Viền dưới khi hover *!*/
-/*}*/
+/* Màu nền của tab khi hover */
+.tab:hover .tab-label{
+    -fx-background-color: #FF6A00; /* Đổi màu nền khi hover */
+    -fx-text-fill: #FFFFFF; /* Màu chữ khi hover */
+    -fx-border-color: #FF6A00; /* Viền cam khi hover */
+    -fx-border-width: 0 0 2px 0; /* Viền dưới khi hover */
+}
