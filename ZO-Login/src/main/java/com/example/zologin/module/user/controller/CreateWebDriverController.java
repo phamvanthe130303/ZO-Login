@@ -11,7 +11,10 @@ import org.openqa.selenium.devtools.v130.target.Target;
 import org.openqa.selenium.Point;
 
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class CreateWebDriverController {
@@ -21,6 +24,8 @@ public class CreateWebDriverController {
         CreateWebDriverController controller = new CreateWebDriverController();
         controller.CreateWebDriverDemo();
     }
+
+    private Map<String,String> tabMap = new HashMap<>();
 
     public  void CreateWebDriverDemo(){
         ChromeService chromeService = new ChromeService();
@@ -70,15 +75,23 @@ public class CreateWebDriverController {
 
         // Bật lắng nghe Target events
         devTools.send(Target.setDiscoverTargets(true, Optional.empty()));
+        Set<String> tablist  = driver.getWindowHandles();
 
         // Lắng nghe sự kiện tab mới được tạo
         devTools.addListener(Target.targetCreated(), target -> {
-            System.out.println("Tab mới được mở: " + target.getTargetId());
+            Set<String> newHandles = driver.getWindowHandles();
+            tablist.clear();
+            tablist.addAll(newHandles);
+
+            //kiem tra nếu target.getTargetId() có trong tablist là tab mới được tạo
+            if (tablist.contains(target.getTargetId().toString().trim())) {
+                System.out.println("Tab mới được mở: " + target.getTargetId());
+            }
         });
 
         // Lắng nghe sự kiện tab bị đóng
         devTools.addListener(Target.targetDestroyed(), targetId -> {
-            System.out.println("Tab bị đóng: " + targetId);
+                System.out.println("Tab bị đóng: " + targetId);
         });
 
         AtomicReference<String> activeTabId = new AtomicReference<>("");
@@ -95,12 +108,17 @@ public class CreateWebDriverController {
         //Chuyển hướng hoặc tải lại trang
         devTools.send(Page.enable());
         devTools.addListener(Page.frameNavigated(), frame -> {
-            chromeService.getAcctionUser(driver);
-            System.out.println("Chuyển hướng hoặc tải lại trang: " + frame.getFrame().getUrl());
+            if (frame.getFrame().getParentId().isEmpty()) {
+                chromeService.getAcctionUser(driver);
+                System.out.println("Chuyển hướng hoặc tải lại trang: " + frame.getFrame().getUrl());
+            }
+
         });
 
         driver.get("https://www.google.com/?hl=vi");
 
 
     }
+
+
 }

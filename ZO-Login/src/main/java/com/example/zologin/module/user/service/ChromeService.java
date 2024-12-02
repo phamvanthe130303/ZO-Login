@@ -38,6 +38,7 @@ public class ChromeService {
         );
 
         if (!isVariableExists) {
+            js.executeScript(UserConstant.SCRIPT_REMOVE_LISTENING);
             System.out.println("đã thêm js vào trang");
             js.executeScript(UserConstant.SCRIP_LISTENING_ACCTION);
         }

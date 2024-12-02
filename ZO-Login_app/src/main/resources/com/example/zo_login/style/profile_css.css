@@ -8,6 +8,10 @@
     -fx-background-color: #2B2B2B; /* Nền của các tab */
     -fx-border-width: 0; /* Đường viền dưới của tab */
 }
+.tab-pane:focused {
+    -fx-focus-color: transparent; /* Loại bỏ màu focus */
+    -fx-background-color:transparent;
+}
 
 /* Màu chữ của tab khi không được chọn */
 .tab {
@@ -31,6 +35,5 @@
 .tab:hover .tab-label{
     -fx-background-color: #FF6A00; /* Đổi màu nền khi hover */
     -fx-text-fill: #FFFFFF; /* Màu chữ khi hover */
-    -fx-border-color: #FF6A00; /* Viền cam khi hover */
-    -fx-border-width: 0 0 2px 0; /* Viền dưới khi hover */
+    -fx-background-radius: 2px 2px 0 0;
 }
