@@ -8,6 +8,10 @@ public class ChromeService {
 
     public void getAcctionUser(WebDriver webDriver){
 
+        //tabId của tab đang được chọn
+        String tabId = "window.tabIdActive = '" +webDriver.getWindowHandle()+ "';\n";
+
+
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         //chờ load xong moi them javascript
         boolean isPageLoaded = false;
@@ -40,7 +44,7 @@ public class ChromeService {
         if (!isVariableExists) {
             js.executeScript(UserConstant.SCRIPT_REMOVE_LISTENING);
             System.out.println("đã thêm js vào trang");
-            js.executeScript(UserConstant.SCRIP_LISTENING_ACCTION);
+            js.executeScript(tabId+UserConstant.SCRIP_LISTENING_ACCTION);
         }
     }
 }

@@ -92,28 +92,36 @@ public class UserConstant {
                     "};\n" +
                     "document.addEventListener('drop', window.dropHandler);\n" +
                     "\n" +
-                    "// Lắng nghe sự kiện Submit" +
+                    "// Lắng nghe sự kiện Submit\n" +
                     "window.submitHandler = function(event) {" +
                     "    console.log('Form submitted: ' + event.target.tagName);" +
                     "};" +
                     "document.addEventListener('submit', window.submitHandler);" +
-                    "// Lắng nghe sự kiện Change" +
+                    "// Lắng nghe sự kiện Change\n" +
                     "window.changeHandler = function(event) {" +
                     "    console.log('Change event on element: ' + event.target.tagName + ' with value: ' + event.target.value);" +
                     "};" +
                     "document.addEventListener('change', window.changeHandler);" +
-                    "// Lắng nghe sự kiện Load" +
+                    "// Lắng nghe sự kiện Load\n" +
                     "window.loadHandler = function() {" +
                     "    console.log('Page fully loaded');};" +
                     "window.addEventListener('load', window.loadHandler);" +
-                    "// Lắng nghe sự kiện Beforeunload" +
+                    "// Lắng nghe sự kiện Beforeunload\n" +
                     "window.beforeUnloadHandler = function(event) {" +
                     "    console.log('Beforeunload event triggered');};" +
                     "window.addEventListener('beforeunload', window.beforeUnloadHandler);" +
-                    "// Lắng nghe sự kiện Error" +
+                    "// Lắng nghe sự kiện Error\n" +
                     "window.errorHandler = function(event) {" +
                     "    console.log('Error event: ' + event.message);};" +
-                    "window.addEventListener('error', window.errorHandler);");
+                    "window.addEventListener('error', window.errorHandler);" +
+                    "//lắng nghe chuyển tab\n" +
+                    "window.visibilityChangeHandler = function() {" +
+                    "    if (document.visibilityState === 'visible') {" +
+                    "        console.log('tab đang đươc active: '+window.tabIdActive);" +
+                    "    }" +
+                    "};" +
+                    "// Add event listener for visibility change\n" +
+                    "window.addEventListener('visibilitychange', window.visibilityChangeHandler);");
     public  static  final String SCRIPT_REMOVE_LISTENING = (
             "// Xóa sự kiện Click\n" +
                     "document.removeEventListener('click', window.clickHandler);\n" +
@@ -176,7 +184,9 @@ public class UserConstant {
                     "window.removeEventListener('error', window.errorHandler);\n" +
                     "\n" +
                     "// Xóa tất cả các listener đã được gán\n" +
-                    "console.log('All event listeners removed');\n");
+                    "console.log('All event listeners removed');\n" +
+                    "//xóa hàm nghe tab" +
+                    "window.removeEventListener('visibilitychange', window.visibilityChangeHandler);");
 
     public static final Integer TIME_OUT_SESSION = 60;
 }

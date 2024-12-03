@@ -3,12 +3,15 @@ package com.example.zologin.module.user.controller;
 import com.example.zologin.module.user.service.ChromeService;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v130.page.Page;
 import org.openqa.selenium.devtools.v130.target.Target;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -75,6 +78,7 @@ public class CreateWebDriverController {
 
         // Bật lắng nghe Target events
         devTools.send(Target.setDiscoverTargets(true, Optional.empty()));
+
         Set<String> tablist  = driver.getWindowHandles();
 
         // Lắng nghe sự kiện tab mới được tạo
@@ -85,6 +89,8 @@ public class CreateWebDriverController {
 
             //kiem tra nếu target.getTargetId() có trong tablist là tab mới được tạo
             if (tablist.contains(target.getTargetId().toString().trim())) {
+                driver.switchTo().window(target.getTargetId().toString());
+                chromeService.getAcctionUser(driver);
                 System.out.println("Tab mới được mở: " + target.getTargetId());
             }
         });
@@ -105,15 +111,43 @@ public class CreateWebDriverController {
             }
         });
 
+//        devTools.addListener(Target.(), target -> {
+//            System.out.println("Tab được kích hoạt: " + target.getTargetId());
+//
+//        });
+
+
+        String tabIdDefault = driver.getWindowHandle();
+
         //Chuyển hướng hoặc tải lại trang
         devTools.send(Page.enable());
         devTools.addListener(Page.frameNavigated(), frame -> {
             if (frame.getFrame().getParentId().isEmpty()) {
+                String tabIdReload = driver.getWindowHandle();
+                if(!tabIdDefault.equals(tabIdReload)){
+                    driver.switchTo().window(tabIdReload);
+                }
                 chromeService.getAcctionUser(driver);
                 System.out.println("Chuyển hướng hoặc tải lại trang: " + frame.getFrame().getUrl());
             }
 
         });
+
+        // Theo dõi sự kiện load trang (reload)
+        devTools.addListener(Page.loadEventFired(), loadEvent -> {
+            System.out.println("Tab đã reload!");
+        });
+
+        //iframe đuoc thêm vào trang
+        devTools.addListener(Page.frameAttached(), frameAttachedEvent -> {
+            System.out.println("Iframe attached: " + frameAttachedEvent.getFrameId());
+        });
+
+        //iframe bị đóng
+        devTools.addListener(Page.frameDetached(), frameDetachedEvent -> {
+            System.out.println("Iframe detached: " + frameDetachedEvent.getFrameId());
+        });
+
 
         driver.get("https://www.google.com/?hl=vi");
 
