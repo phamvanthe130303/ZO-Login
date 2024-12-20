@@ -1,0 +1,6 @@
+.hover-button:hover {
+    -fx-background-color: red; /* Màu khi hover */
+}
+.hover-button{
+    -fx-background-color:#3C3F41;
+}

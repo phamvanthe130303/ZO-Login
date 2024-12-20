@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="602.0" prefWidth="1061.0" style="-fx-background-color: #242424;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zo_login.controller.DashboadController">
+<AnchorPane prefHeight="602.0" prefWidth="1061.0" style="-fx-background-color: #242424;" stylesheets="@../style/button_css.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zo_login.controller.DashboardController">
    <children>
       <BorderPane fx:id="rootPane" layoutX="75.0" layoutY="47.0" prefHeight="519.0" prefWidth="889.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -20,16 +20,16 @@
                   <Pane prefHeight="30.0" prefWidth="336.0" style="-fx-background-color: #3A3A3A; -fx-background-radius: 20px;" HBox.hgrow="SOMETIMES">
                      <children>
                         <Line endX="-10.5" endY="-10.0" layoutX="29.0" layoutY="15.0" startX="-10.5" startY="25.0" />
-                        <Text fx:id="nameMenu" fill="WHITESMOKE" layoutX="28.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên chức năng">
+                        <Text fx:id="nameMenu" fill="WHITE" layoutX="28.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tên chức năng">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Text>
-                        <Text fx:id="descMenu" fill="ALICEBLUE" layoutX="28.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả: chức năng làm cái quần gì" />
+                        <Text fx:id="descMenu" fill="WHITE" layoutX="28.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mô tả: chức năng làm cái quần gì" />
                      </children></Pane>
                   <Pane maxHeight="45.0" maxWidth="200.0" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #3A3A3A; -fx-background-radius: 20px;">
                      <children>
-                        <Button fx:id="btnLogout" layoutX="146.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnLogout" layoutX="142.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -37,7 +37,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnAccount" layoutX="86.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnAccount" layoutX="80.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -45,7 +45,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnNoti" layoutX="16.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnNoti" layoutX="16.0" layoutY="2.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -67,7 +67,7 @@
                <children>
                   <Pane layoutY="14.0" prefHeight="529.0" prefWidth="50.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
                      <children>
-                        <Button fx:id="btnMenuProfile" layoutY="20.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuProfile" layoutY="20.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -75,7 +75,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuProxy" layoutY="75.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuProxy" layoutY="75.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fx:id="btn" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -83,7 +83,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuRec" layoutY="144.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuRec" layoutY="144.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -91,7 +91,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuShedule" layoutY="199.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuSchedule" layoutY="199.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -99,7 +99,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuCoder" layoutY="255.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuCoder" layoutY="255.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -107,7 +107,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuBlog" layoutY="331.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuBlog" layoutY="331.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -115,7 +115,7 @@
                                  </image>
                               </ImageView>
                            </graphic></Button>
-                        <Button fx:id="btnMenuConnect" layoutY="386.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" style="-fx-background-color: #3A3A3A;">
+                        <Button fx:id="btnMenuContact" layoutY="386.0" mnemonicParsing="false" onAction="#handleMenuClick" prefHeight="34.0" prefWidth="50.0" styleClass="button_tooltip">
                            <graphic>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -138,7 +138,10 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </BorderPane.margin>
                <children>
-                  <StackPane fx:id="idBodyCenter" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <StackPane fx:id="idBodyCenter" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #2B2B2B; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#showAlert" text="Button" />
+                     </children></StackPane>
                </children></AnchorPane>
          </center>
          <right>

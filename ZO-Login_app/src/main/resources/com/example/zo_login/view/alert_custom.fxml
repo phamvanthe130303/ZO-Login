@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="200" prefWidth="400" spacing="10" style="-fx-background-color: #3C3F41;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zo_login.controller.AlertCustomController">
+   <BorderPane prefHeight="279.0" prefWidth="450.0">
+      <center>
+         <AnchorPane prefHeight="143.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox alignment="CENTER" prefHeight="149.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <Label fx:id="lblMessage" alignment="CENTER" prefHeight="143.0" prefWidth="450.0" style="-fx-wrap-text: true;" text="This is a custom alert!" textFill="WHITE" wrapText="true">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" right="10.0" />
+                        </HBox.margin>
+                     </Label>
+                  </children>
+               </HBox>
+            </children>
+         </AnchorPane>
+      </center>
+      <bottom>
+         <AnchorPane prefHeight="40.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox layoutY="47.0" prefHeight="53.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#onOkClicked" prefHeight="31.0" prefWidth="501.0" style="-fx-background-color: #4D77CA;" text="%alert.btn.cancel" textFill="WHITE">
+                        <HBox.margin>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </HBox.margin>
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </AnchorPane>
+      </bottom>
+      <top>
+         <AnchorPane prefHeight="40.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+            <children>
+               <HBox alignment="CENTER" prefHeight="97.0" prefWidth="300.0" spacing="10" stylesheets="@../style/alert_css.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <!-- Text nằm bên trái -->
+                     <Label prefHeight="21.0" prefWidth="374.0" text="%alert.text.title" textFill="WHITE">
+                        <font>
+                           <Font size="15.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets left="10.0" />
+                        </HBox.margin>
+                     </Label>
+            
+                     <!-- Button nằm bên phải -->
+                     <Button mnemonicParsing="false" onAction="#onOkClicked" prefHeight="40.0" prefWidth="51.0" styleClass="hover-button" text="X" textFill="WHITE">
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </AnchorPane>
+      </top>
+   </BorderPane>
+</VBox>

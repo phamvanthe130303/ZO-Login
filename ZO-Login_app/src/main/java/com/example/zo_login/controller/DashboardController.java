@@ -1,6 +1,8 @@
 package com.example.zo_login.controller;
 
 import com.example.zo_login.model.MenuObject;
+import com.example.zo_login.util.CreateToolTip;
+import com.example.zo_login.util.CustomAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DashboadController {
+public class DashboardController {
 
     @FXML
     private BorderPane rootPane;
@@ -34,13 +36,13 @@ public class DashboadController {
     @FXML
     private Button btnMenuRec;
     @FXML
-    private Button btnMenuShedule;
+    private Button btnMenuSchedule;
     @FXML
     private Button btnMenuCoder;
     @FXML
     private Button btnMenuBlog;
     @FXML
-    private Button btnMenuConnect;
+    private Button btnMenuContact;
 
     @FXML
     private Button btnNoti;
@@ -55,6 +57,24 @@ public class DashboadController {
     private StackPane idBodyCenter;
 
     @FXML
+    public void initialize() {
+        // Tạo Tooltip cho từng nút menu
+        CreateToolTip.createTooltip(btnMenuProfile, "Profile", "right");
+        CreateToolTip.createTooltip(btnMenuProxy, "Proxy", "right");
+        CreateToolTip.createTooltip(btnMenuRec, "Script", "right");
+        CreateToolTip.createTooltip(btnMenuSchedule, "Schedule", "right");
+        CreateToolTip.createTooltip(btnMenuCoder, "Coder", "right");
+        CreateToolTip.createTooltip(btnMenuBlog, "Blog", "right");
+        CreateToolTip.createTooltip(btnMenuContact, "Contact", "right");
+
+        // Tooltip cho các nút khác nếu cần
+        CreateToolTip.createTooltip(btnNoti, "Notification", "bottom");
+        CreateToolTip.createTooltip(btnLogout, "Sign out", "bottom");
+        CreateToolTip.createTooltip(btnAccount, "Account", "bottom");
+    }
+
+
+    @FXML
     private void handleMenuClick(ActionEvent event) {
 
         List<MenuObject> menuList = new ArrayList<>();
@@ -63,11 +83,16 @@ public class DashboadController {
         menuList.add(
                 new MenuObject("2","Proxy","Mô tả: Chức năng quản lý proxy","proxy_view.fxml","btnMenuProxy"));
         menuList.add(
-                new MenuObject("3","Rec","Mô tả: Chức năng quản lý thông tin trình duyệt","rec_view.fxml","btnMenuRec"));
+                new MenuObject("3","Script","Mô tả: Chức năng quản lý thông tin trình duyệt","rec_view.fxml","btnMenuRec"));
         menuList.add(
-                new MenuObject("4","Shedule","Mô tả: Chức năng quản lý lịch trình","shedule_view.fxml","btnMenuShedule"));
+                new MenuObject("4","Schedule","Mô tả: Chức năng quản lý lịch trình","schedule_view.fxml","btnMenuSchedule"));
         menuList.add(
                 new MenuObject("5","Coder","Mô tả: Chức năng viết code","coder_view.fxml","btnMenuCoder"));
+        menuList.add(
+                new MenuObject("6","Blog","Mô tả: Chức năng bài viết","blog_view.fxml","btnMenuBlog"));
+
+        menuList.add(
+                new MenuObject("7","Contact","Mô tả: Chức năng liên hệ","contact_view.fxml","btnMenuContact"));
 
         // Tìm Button được nhấn
         Button clickedButton = (Button) event.getSource();
@@ -94,22 +119,35 @@ public class DashboadController {
 
         Button selectedButton = (Button) rootPane.lookup("#" + menuObject.getIdButton());
         if (selectedButton != null) {
-            selectedButton.setStyle("-fx-background-color: #242424; -fx-text-fill: white; -fx-border-color: #000000; -fx-border-width: 0 0 0 3;");
+            selectedButton.getStyleClass().remove("button_tooltip");;
+            selectedButton.getStyleClass().add("button_selected");
         }
         // Load nội dung FXML
         setCenterContent(menuObject.getFileMenu());
     }
 
     private void resetMenuColors() {
-        // Reset màu tất cả các nút về mặc định
-        String defaultStyle = "-fx-background-color: #3A3A3A; -fx-text-fill: gray; -fx-border-width: 0;";
-        btnMenuProfile.setStyle(defaultStyle);
-        btnMenuProxy.setStyle(defaultStyle);
-        btnMenuRec.setStyle(defaultStyle);
-        btnMenuShedule.setStyle(defaultStyle);
-        btnMenuCoder.setStyle(defaultStyle);
-        btnMenuBlog.setStyle(defaultStyle);
-        btnMenuConnect.setStyle(defaultStyle);
+        // Xóa class cũ và thêm class "button_tooltip" cho các nút
+        btnMenuProfile.getStyleClass().remove("button_selected");
+        btnMenuProfile.getStyleClass().add("button_tooltip");
+
+        btnMenuProxy.getStyleClass().remove("button_selected");
+        btnMenuProxy.getStyleClass().add("button_tooltip");
+
+        btnMenuRec.getStyleClass().remove("button_selected");
+        btnMenuRec.getStyleClass().add("button_tooltip");
+
+        btnMenuSchedule.getStyleClass().remove("button_selected");
+        btnMenuSchedule.getStyleClass().add("button_tooltip");
+
+        btnMenuCoder.getStyleClass().remove("button_selected");
+        btnMenuCoder.getStyleClass().add("button_tooltip");
+
+        btnMenuBlog.getStyleClass().remove("button_selected");
+        btnMenuBlog.getStyleClass().add("button_tooltip");
+
+        btnMenuContact.getStyleClass().remove("button_selected");
+        btnMenuContact.getStyleClass().add("button_tooltip");
     }
 
     private void setCenterContent(String fxmlFile) {
@@ -123,5 +161,9 @@ public class DashboadController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void showAlert(){
+        CustomAlert.showAlert("Đăng ký thành công");
     }
 }
